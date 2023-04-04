@@ -1,11 +1,14 @@
 module.exports = {
+  siteMetadata: {
+    title: `Awesome Demo`,
+    description: `One demo to rule them all`,
+  },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "@raae/gatsby-plugin-svg-emoji-favicon",
       options: {
-        path: `${__dirname}/content`,
+        emoji: "🎉",
       },
     },
-    `@raae/gatsby-theme-queen`,
   ],
 };

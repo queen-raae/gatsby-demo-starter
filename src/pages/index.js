@@ -1,31 +1,28 @@
 import React from "react";
+import useSiteMetadata from "../useSiteMetadata";
 
-const IndexPage = () => {
+export function Head() {
+  const { title } = useSiteMetadata();
+  return (
+    <>
+      <title>{title}</title>
+    </>
+  );
+}
+
+export default function IndexPage() {
+  const { title, description, emoji } = useSiteMetadata();
   return (
     <main>
       <header>
         <h1>
-          <span role="img" aria-label="Party popper emoji">
-            🎉&nbsp;
-          </span>
-          Awsome Demo
-          <span role="img" aria-label="Party popper emoji">
-            &nbsp;🎉
-          </span>
+          {title} {emoji}
         </h1>
-        <p>A demo for all the things!</p>
+        <p>{description}</p>
       </header>
-      <section>
-        <form>
-          <fieldset>
-            <label htmlFor="email">Your email address:</label>
-            <input id="email" name="email" type="email" required />
-            <button type="submit">Button</button>
-          </fieldset>
-        </form>
-      </section>
+      <p>
+        <a href="/api/hello">Go to Gatsby Function `hello`</a>
+      </p>
     </main>
   );
-};
-
-export default IndexPage;
+}

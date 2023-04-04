@@ -1,7 +1,17 @@
 import React from "react";
 import { Link } from "gatsby";
+import useSiteMetadata from "../useSiteMetadata";
 
-const NotFoundPage = () => {
+export function Head() {
+  const { title } = useSiteMetadata();
+  return (
+    <>
+      <title>Page not found | {title}</title>
+    </>
+  );
+}
+
+export default function NotFoundPage() {
   return (
     <main>
       <header>
@@ -18,6 +28,4 @@ const NotFoundPage = () => {
       </p>
     </main>
   );
-};
-
-export default NotFoundPage;
+}
