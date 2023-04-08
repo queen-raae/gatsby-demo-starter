@@ -13,15 +13,17 @@ export function Head() {
 export default function IndexPage() {
   const { title, description, emoji } = useSiteMetadata();
   return (
-    <main>
-      <header>
-        <h1>
+    <main className="space-y-4">
+      <header className="space-y-3">
+        <h1 className="text-3xl lg:text-4xl font-bold">
           {title} {emoji}
         </h1>
         <p>{description}</p>
       </header>
       <p>
-        <a href="/api/hello">Go to Gatsby Function `hello`</a>
+        <a className="underline text-purple-800" href="/api/hello">
+          Go to Gatsby Function `hello`
+        </a>
       </p>
     </main>
   );
